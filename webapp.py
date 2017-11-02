@@ -16,7 +16,7 @@ def get_state_options():
             state = c["State"]
     return choice
 
-def get_fact(state):
+def get_statefact(state):
     statefact = "Percentage of people under 18 in this state:"
     for c in counties:
         if state == c["State"]:
