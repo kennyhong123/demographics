@@ -15,3 +15,7 @@ def get_state_options():
             choice += Markup("<option value=" + state +">" + state + "</option>")
             state = c["State"]
     return choice
+
+@app.route("/")
+def render_main():
+   return render_template('index.html', option = get_state_options())
