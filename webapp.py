@@ -16,6 +16,19 @@ def get_state_options():
             state = c["State"]
     return choice
 
+def get_statefact(state):
+    funfact = ""
+    for c in counties:
+        if state == c["State"]:
+            fact = c["Age"]["Percent Under 18 Year"]
+            statefact += Markup("<p>" + str(fact) + "</p>")
+    return statefact
+
 @app.route("/")
 def render_main():
    return render_template('index.html', option = get_state_options())
+
+@app.route("/", methods=['POST'])
+def render_fact():
+    place = request.args['data']
+    render_template('index.html', fact = get_statefact(place))
