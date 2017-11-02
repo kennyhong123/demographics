@@ -22,18 +22,3 @@ def get_fact(state):
         if state == c["State"]:
             statefact += c["Age"]["Percent Under 18 Years"]
     return statefact
-    
-
-@app.route("/")
-def render_main():
-    get_state_options()
-    return render_template('home.html', option = get_state_options())
- 
-@app.route("/", methods=['GET','POST'])
-def render_fact():
-    state = request.form.get('select')
-    render_template('home.html',statefact=get_fact(state))
-    
-if __name__=="__main__":
-    app.run(debug=False, port=54321)
-© 2017 GitHub, Inc.
