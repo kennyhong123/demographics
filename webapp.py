@@ -15,10 +15,3 @@ def get_state_options():
             choice += Markup("<option value=" + state +">" + state + "</option>")
             state = c["State"]
     return choice
-
-def get_statefact(state):
-    statefact = "Percentage of people under 18 in this state:"
-    for c in counties:
-        if state == c["State"]:
-            statefact += c["Age"]["Percent Under 18 Years"]
-    return statefact
