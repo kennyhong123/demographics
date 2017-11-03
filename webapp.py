@@ -32,3 +32,6 @@ def render_main():
 def render_fact():
     place = request.args['data']
     render_template('index.html', fact = get_statefact(place))
+
+if __name__=="__main__":
+     app.run(debug=False, port=54321)
