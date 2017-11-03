@@ -29,7 +29,7 @@ def render_main():
    get_state_options()
    return render_template('index.html', option = get_state_options())
 
-@app.route("/", methods=['POST'])
+@app.route("/app", methods=['POST'])
 def render_fact():
     get_state_options()
     area = request.args['data']
