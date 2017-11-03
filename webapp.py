@@ -26,14 +26,12 @@ def get_statefact(state):
 
 @app.route("/")
 def render_main():
-   get_state_options()
    return render_template('index.html', option = get_state_options())
 
 @app.route("/app", methods=['POST'])
 def render_fact():
-    get_state_options()
-    area = request.args['data']
-    return render_template('index.html', fact = get_statefact)
+    area = request.args['dat']
+    return render_template('index.html', fact = get_statefact(area), option = get_state_options())
 
 if __name__=="__main__":
      app.run(debug=False, port=54321)
