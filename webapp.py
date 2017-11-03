@@ -28,7 +28,7 @@ def get_statefact(state):
 def render_main():
    return render_template('index.html', option = get_state_options())
 
-@app.route("/app", methods=['POST'])
+@app.route("/app", methods=['GET','POST'])
 def render_fact():
     area = request.args['dat']
     return render_template('index.html', fact = get_statefact(area), option = get_state_options())
