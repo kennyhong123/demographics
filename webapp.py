@@ -21,7 +21,7 @@ def get_statefact(state):
     for c in counties:
         if state == c["State"]:
             fact += c["Age"]["Percent Under 18 Year"]
-    statefact += Markup("<p>" + str(fact) + "</p>")
+    statefact = Markup("<p>" + str(fact) + "</p>")
     return statefact
 
 @app.route("/")
